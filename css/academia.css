@@ -1,0 +1,85 @@
+/* Academia Section */
+.section[class*="academia"] {
+    margin-left: 10cm; /* Right shift the entire section by 10cm */
+}
+
+.section[class*="academia"] .post-item {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #eee;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Three columns: title, dummy, location */
+    gap: 50px; /* Increased gap for more spacing */
+    align-items: center;
+    width: 100%;
+}
+
+.section[class*="academia"] .post-title {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 5px 0;
+    word-wrap: break-word;
+    font-weight: normal;
+    text-transform: none;
+    grid-column: 1;
+}
+
+/* Magnifying glass icon styling */
+.section[class*="academia"] .search-icon {
+    font-size: 10px; /* Smaller size for the icon */
+    margin-left: 20px; /* Space before the icon */
+    opacity: 0.5; /* More transparent */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.section[class*="academia"] .dummy-column {
+    grid-column: 2;
+    min-width: 150px; /* Increased width for the dummy column */
+}
+
+.section[class*="academia"] .post-location {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-align: right; /* Right align the location/date */
+    padding: 5px 0;
+    grid-column: 3;
+}
+
+.section[class*="academia"] .category {
+    margin-bottom: 50px;
+}
+
+/* Academia Tags */
+.section[class*="academia"] .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 0;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.section[class*="academia"] .tag {
+    font-size: 12px;
+    background-color: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #000;
+    display: inline-block;
+}
+
+.preserve-caps {
+    text-transform: none !important;
+}
+
+/* Remove the old magnifying glass styles */
+.section[class*="academia"] .post-title::after {
+    content: none;
+}
+
+.section[class*="academia"] .post-title::before {
+    content: none;
+} 

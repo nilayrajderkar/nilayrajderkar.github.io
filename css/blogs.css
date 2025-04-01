@@ -1,0 +1,46 @@
+/* Blog Section */
+.post-item {
+    display: grid;
+    grid-template-columns: minmax(200px, 2fr) minmax(200px, 1fr) auto;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-title:hover {
+    color: #666;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: flex-end;
+    width: 100%;
+    text-align: right;
+}
+
+.tag {
+    font-size: 12px;
+    background-color: #e0e0e0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #000;
+    display: inline-block;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #000;
+    text-align: right;
+    white-space: nowrap;
+    width: 110px; /* Fixed width for dates */
+} 

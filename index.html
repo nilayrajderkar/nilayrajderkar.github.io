@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nilay's dump</title>
+    
+    <!-- Juice box emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧃</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/blogs.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/academia.css">
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+    
+    <div class="content">
+        <div class="blog-container" x-data="{ activeTab: 'about' }">
+            <div class="nav-slider">
+                <div class="nav-item" :class="{ 'active': activeTab === 'about' }" @click="activeTab = 'about'">ABOUT</div>
+                <div class="nav-item" :class="{ 'active': activeTab === 'blogs' }" @click="activeTab = 'blogs'">BLOGS</div>
+                <div class="nav-item" :class="{ 'active': activeTab === 'projects' }" @click="activeTab = 'projects'">PROJECTS</div>
+                <div class="nav-item" :class="{ 'active': activeTab === 'academia' }" @click="activeTab = 'academia'">ACADEMIA</div>
+            </div>
+            
+            <div class="section" :class="{ 'active': activeTab === 'blogs' }">
+                <!-- Empty blogs section -->
+            </div>
+            
+            <div class="section" :class="{ 'active': activeTab === 'projects' }">
+                <!-- Empty projects section -->
+            </div>
+            
+            <div class="section" :class="{ 'active': activeTab === 'about' }">
+                <div class="about-content">
+                    <p>
+                        <strong>backend | data engineer at <a href="https://www.sundial.so/" target="_blank">Sundial</a></strong>, where we build actionable insights for the world's largest companies. previously @ Indeed, Gameskraft, and PayPal.
+                    </p>
+                    <p>
+                        23' grad with a master's in economics and a bachelor's in computer science from BITS Pilani.
+                        Through academia, I particularly work on econometrics, causality and causal inference in derivatives, and policy making for emerging markets.
+                    </p>
+                    <p>
+                        currently exploring anything with a tinge of algorithms, systems, and foundational computer science.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="section" :class="{ 'active': activeTab === 'academia' }">
+                <div class="category">
+                    <h2 class="category-title">journals</h2>
+                    <div class="post-item">
+                        <a href="https://www.sciencedirect.com/journal/resources-policy/vol/75/suppl/C" target="_blank" class="post-title">
+                            Resources Policy - The International Journal of Minerals Policy and Economics
+                            <span class="search-icon">🔗</span>
+                        </a>
+                        <div class="dummy-column"></div>
+                        <span class="post-location">Austria, 2022</span>
+                    </div>
+                </div>
+                
+                <div class="category">
+                    <h2 class="category-title">conferences</h2>
+                    <div class="post-item">
+                        <a href="https://iimbg.ac.in/wp-content/uploads/2023/01/CIEMC_Book-of-Abstracts.pdf" target="_blank" class="post-title">
+                            Contemporary Issues in Emerging Markets Conference (CIEMC)
+                            <span class="search-icon">🔗</span>
+                        </a>
+                        <div class="dummy-column"></div>
+                        <span class="post-location">IIM Bodh Gaya, 2022</span>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://ieeexplore.ieee.org/xpl/conhome/9791457/proceeding" target="_blank" class="post-title">
+                            Interdisciplinary Research in Technology and Management (IRTM)
+                            <span class="search-icon">🔗</span>
+                        </a>
+                        <div class="dummy-column"></div>
+                        <span class="post-location">Kolkata, 2022</span>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2 class="category-title">research papers</h2>
+                    <div class="post-item">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301420721004827" target="_blank" class="post-title">
+                            Rolling, Recursive Evolving and Asymmetric Causality between Crude Oil and Gold Prices
+                            <span class="search-icon">🔗</span>
+                        </a>
+                        <div class="dummy-column"></div>
+                        <span class="post-location">2021</span>
+                    </div>
+                    <div class="post-item">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/9791597" target="_blank" class="post-title">
+                            Application of PCA for Satisfaction Perception
+                            <span class="search-icon">🔗</span>
+                        </a>
+                        <div class="dummy-column"></div>
+                        <span class="post-location">2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Social icons sidebar -->
+    <div class="social-icons">
+        <a href="https://github.com/nilayrajderkar" target="_blank" class="social-icon" title="GitHub">
+            GITHUB
+        </a>
+        <a href="https://www.linkedin.com/in/nilayrajderkar/" target="_blank" class="social-icon" title="LinkedIn">
+            LINKEDIN
+        </a>
+        <a href="https://drive.google.com/file/d/1eLvxm6cvsKHwiX8Vw-EBLV7uwI6NuVwC/view" target="_blank" class="social-icon" title="CV">
+            CV
+        </a>
+    </div>
+    
+    <script type="module">
+        import { Application } from 'https://unpkg.com/@splinetool/runtime@0.9.493/build/runtime.js';
+        
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/xEui27HYWexVaggA/scene.splinecode');
+    </script>
+    
+    <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the container element
+            const container = document.querySelector('.blog-container');
+            
+            // Get Alpine data
+            const getAlpineData = () => {
+                return Alpine.evaluate(container, 'activeTab');
+            };
+            
+            // Set Alpine data
+            const setAlpineData = (value) => {
+                Alpine.evaluate(container, `activeTab = '${value}'`);
+            };
+            
+            // Handle tab switching
+            const handleSwipe = (direction) => {
+                const currentTab = getAlpineData();
+                const tabs = ['about', 'blogs', 'projects', 'academia'];
+                const currentIndex = tabs.indexOf(currentTab);
+                
+                if (direction === 'left') {
+                    // Move to next tab (right)
+                    const nextIndex = (currentIndex + 1) % tabs.length;
+                    setAlpineData(tabs[nextIndex]);
+                } else if (direction === 'right') {
+                    // Move to previous tab (left)
+                    const prevIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                    setAlpineData(tabs[prevIndex]);
+                }
+            };
+        });
+    </script>
+</body>
+</html>

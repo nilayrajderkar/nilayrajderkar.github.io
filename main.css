@@ -1,0 +1,10 @@
+/* Content Sections */
+.section {
+    display: none;
+    margin-top: 0;
+    padding-left: 30px; /* Add padding to move content to the right */
+}
+
+.section.active {
+    display: block;
+} 

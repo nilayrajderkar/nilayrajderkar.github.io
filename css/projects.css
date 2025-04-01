@@ -1,0 +1,43 @@
+/* Projects Section */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-title {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    text-transform: lowercase;
+    font-weight: 600;
+}
+
+.project-desc {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    font-size: 12px;
+    background-color: #e0e0e0;
+    padding: 5px 12px;
+    border-radius: 3px;
+    color: #000;
+} 
