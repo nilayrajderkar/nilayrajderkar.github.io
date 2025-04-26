@@ -29,7 +29,15 @@
             </div>
             
             <div class="section" :class="{ 'active': activeTab === 'blogs' }">
-                <!-- Empty blogs section -->
+                <!-- New blog entry -->
+                <div class="post-item">
+                    <a href="parse_obj_and_subclasses.html" target="_blank" class="post-title" style="color: black;">
+                        Pydantic parse_obj and polymorphism
+                        <span class="search-icon">🔗</span>
+                    </a>
+                    <div class="dummy-column"></div>
+                    <span class="post-date">2023</span>
+                </div>
             </div>
             
             <div class="section" :class="{ 'active': activeTab === 'projects' }">
@@ -163,5 +171,7 @@
             };
         });
     </script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@latest/dist/zero-md.min.js"></script>
 </body>
 </html>
